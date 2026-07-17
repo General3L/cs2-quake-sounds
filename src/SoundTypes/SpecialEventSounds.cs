@@ -20,6 +20,9 @@ namespace QuakeSounds.SoundTypes
                 ("firstblood", () => IsFirstBlood(attacker) && PlaySound(attacker, victim, "firstblood", null)),
                 ("knifekill", () => eventData.Weapon.Contains("knife", StringComparison.OrdinalIgnoreCase) && PlaySound(attacker, victim, "knifekill", null)),
                 ("headshot", () => eventData.Headshot && PlaySound(attacker, victim, "headshot", null)),
+                ("headshot", () => eventData.Headshot && PlaySound(attacker, victim, "excellent", null)),
+                ("headshot", () => eventData.Headshot && PlaySound(attacker, victim, "hattrick", null)),
+                ("headshot", () => eventData.Headshot && PlaySound(attacker, victim, "headhunter", null)),
             ];
 
             foreach ((string _, Func<bool> tryPlay) in specialSounds)
